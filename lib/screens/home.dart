@@ -1,3 +1,4 @@
+import 'package:all_widgets/utils/constants.dart';
 import 'package:all_widgets/widgets/mycard.dart';
 import 'package:flutter/material.dart';
 
@@ -8,7 +9,7 @@ class MyHomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('MyApp'),
+        title: const Text(appTitle),
         actions: [
           IconButton(
             icon: const Icon(
@@ -26,14 +27,41 @@ class MyHomePage extends StatelessWidget {
           ),
         ],
       ),
-      body: const Column(
-        mainAxisAlignment: MainAxisAlignment.start,
-        children: [
+      body: ListView(
+        padding: cardPadding,
+        children: const [
           MyCard(title: "title", description: "description"),
           MyCard(title: "title", description: "description"),
           MyCard(title: "title", description: "description"),
           MyCard(title: "title", description: "description"),
         ],
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {},
+        child: const Icon(Icons.add),
+      ),
+      bottomNavigationBar: BottomAppBar(
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: [
+            IconButton(
+              icon: const Icon(Icons.home),
+              onPressed: () {},
+            ),
+            IconButton(
+              icon: const Icon(Icons.search),
+              onPressed: () {},
+            ),
+            IconButton(
+              icon: const Icon(Icons.notifications),
+              onPressed: () {},
+            ),
+            IconButton(
+              icon: const Icon(Icons.menu),
+              onPressed: () {},
+            ),
+          ],
+        ),
       ),
     );
   }
